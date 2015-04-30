@@ -30,10 +30,70 @@ class HTextView : UITextView
 
     }
     
+    func countParagraphs() -> Int
+    {
+        let stringComponents = self.text.componentsSeparatedByString("\n")
+        var paragraphCount = 0
+        
+        for oneString in stringComponents
+        {
+            let oneMutableString = NSMutableString(string: oneString)
+            while( oneMutableString.rangeOfString("\n").length > 0 )
+            {
+                oneMutableString.deleteCharactersInRange( oneMutableString.rangeOfString("\n"))
+            }
+            
+            if oneMutableString.length > 0
+            {
+                paragraphCount++
+            }
+        }
+        
+        return paragraphCount
+        
+    }
+    
+    func getLineHeight() -> CGFloat
+    {
+        return self.font.lineHeight
+    }
+    
+    func getTextRect() -> CGRect
+    {
+        if self.window == nil
+        {
+            NSException(name: "View Hierarchy Exception", reason: "The HTextView is not in the view hierarchy", userInfo: nil).raise()
+        }
+        
+        let layoutManager = self.layoutManager
+        let textContainer = self.textContainer
+        let glyphCount = layoutManager.numberOfGlyphs
+        let textRect = layoutManager.boundingRectForGlyphRange(NSMakeRange(0, glyphCount), inTextContainer: textContainer)
+        
+        return textRect
+    }
+    
     func testGetAttributedText()->NSAttributedString
     {
         return self.attributedText
         //self.textContainer.
+    }
+    
+    func testAlign()
+    {
+        let textStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
+        textStyle.alignment = NSTextAlignment.Center
+        let textStyle1 = textStyle.mutableCopy() as! NSMutableParagraphStyle
+        
+        
+        let mutableText = self.attributedText.mutableCopy() as! NSMutableAttributedString
+        
+        mutableText.setAttributes([NSParagraphStyleAttributeName : textStyle, NSFontAttributeName : self.font], range: NSMakeRange(0, 1))
+        mutableText.setAttributes([NSFontAttributeName : self.font], range: NSMakeRange(1, 4))
+        mutableText.setAttributes([NSParagraphStyleAttributeName : textStyle1, NSFontAttributeName : self.font], range: NSMakeRange(6, 1))
+        mutableText.setAttributes([NSFontAttributeName : self.font], range: NSMakeRange(7, mutableText.length - 7))
+        
+        self.attributedText = mutableText
     }
 
 }

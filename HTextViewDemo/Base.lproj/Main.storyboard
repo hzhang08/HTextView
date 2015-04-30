@@ -20,7 +20,6 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msr-aS-EjV" customClass="HTextView" customModule="HTextViewDemo" customModuleProvider="target">
                                 <rect key="frame" x="40" y="38" width="521" height="364"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -33,6 +32,18 @@
                                     <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AqQ-l0-OrD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEs-Vx-WTR">
+                                <rect key="frame" x="254" y="483" width="93" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="93" id="qN8-Ir-eqX"/>
+                                </constraints>
+                                <state key="normal" title="Test Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="testButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gNG-cp-K1i"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -42,6 +53,8 @@
                             <constraint firstItem="Msr-aS-EjV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="18" id="OI4-iA-6WW"/>
                             <constraint firstAttribute="centerX" secondItem="Msr-aS-EjV" secondAttribute="centerX" constant="-0.5" id="RY1-FE-dGl"/>
                             <constraint firstItem="QSI-uh-8fr" firstAttribute="top" secondItem="Msr-aS-EjV" secondAttribute="bottom" constant="32" id="XXw-ya-fYC"/>
+                            <constraint firstItem="jEs-Vx-WTR" firstAttribute="top" secondItem="QSI-uh-8fr" secondAttribute="bottom" constant="19" id="YDb-1h-m29"/>
+                            <constraint firstAttribute="centerX" secondItem="jEs-Vx-WTR" secondAttribute="centerX" id="YJ7-BV-1xT"/>
                         </constraints>
                     </view>
                     <connections>

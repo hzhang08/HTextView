@@ -14,6 +14,7 @@
 		9535CCE41AF062B7003F4F8C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9535CCE21AF062B7003F4F8C /* LaunchScreen.xib */; };
 		9535CCF01AF062B7003F4F8C /* HTextViewDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535CCEF1AF062B7003F4F8C /* HTextViewDemoTests.swift */; };
 		9535CCFA1AF0632F003F4F8C /* HTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535CCF91AF0632F003F4F8C /* HTextView.swift */; };
+		9535CCFC1AF1F16A003F4F8C /* text in Resources */ = {isa = PBXBuildFile; fileRef = 9535CCFB1AF1F16A003F4F8C /* text */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		9535CCEE1AF062B7003F4F8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9535CCEF1AF062B7003F4F8C /* HTextViewDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTextViewDemoTests.swift; sourceTree = "<group>"; };
 		9535CCF91AF0632F003F4F8C /* HTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTextView.swift; path = HTextView/HTextView.swift; sourceTree = "<group>"; };
+		9535CCFB1AF1F16A003F4F8C /* text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = text; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		9535CCD71AF062B7003F4F8C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9535CCFB1AF1F16A003F4F8C /* text */,
 				9535CCD81AF062B7003F4F8C /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -198,6 +201,7 @@
 				9535CCDF1AF062B7003F4F8C /* Main.storyboard in Resources */,
 				9535CCE41AF062B7003F4F8C /* LaunchScreen.xib in Resources */,
 				9535CCE11AF062B7003F4F8C /* Images.xcassets in Resources */,
+				9535CCFC1AF1F16A003F4F8C /* text in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +419,7 @@
 				9535CCF51AF062B7003F4F8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9535CCF61AF062B7003F4F8C /* Build configuration list for PBXNativeTarget "HTextViewDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +428,7 @@
 				9535CCF81AF062B7003F4F8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -14,13 +14,22 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let filePath = NSBundle.mainBundle().pathForResource("text", ofType: "")!
+        hTextView.text = String(contentsOfFile: filePath, encoding: NSUTF8StringEncoding, error: nil)
+        //hTextView.testAlign()
         //println("this text view has \(hTextView.countLines()) lines")
-
+        
+        println("this text view has \(hTextView.countParagraphs()) paragraphs")
+        println("this text view's line height is \(hTextView.getLineHeight())")
+        
+        
     }
     
     override func viewDidAppear(animated: Bool) {
 
         println("this text view has \(hTextView.countLines()) lines")
+        println("this text view's text rect is \(hTextView.getTextRect())")
         
     }
     
@@ -41,6 +50,11 @@ class ViewController: UIViewController {
     {
         hTextView.removeFromSuperview()
         println("this text view has \(hTextView.countLines()) lines")
+    }
+    
+    @IBAction func testButtonClicked(button: UIButton)
+    {
+        hTextView.testAlign()
     }
 }
 
