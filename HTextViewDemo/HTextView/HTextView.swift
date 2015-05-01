@@ -73,6 +73,37 @@ class HTextView : UITextView
         return textRect
     }
     
+    func highlightText(range: NSRange, color: UIColor)
+    {
+        let mutableString = self.attributedText.mutableCopy() as! NSMutableAttributedString
+        
+        var startingIndex = range.location
+        
+        while(startingIndex < range.location + range.length)
+        {
+        
+        var effectiveRange = NSMakeRange(0, 0)
+        var attributes = mutableString.attributesAtIndex(range.location, effectiveRange: &effectiveRange)
+        attributes.updateValue(color, forKey: NSBackgroundColorAttributeName)
+        
+        if range.location + range.location > effectiveRange.location + effectiveRange.length
+        {
+            mutableString.setAttributes(attributes, range: effectiveRange)
+        }
+        else
+        {
+            let realStart = max(effectiveRange.location, range.location) //this edge case... effective range location might even be greater at first place
+            let realEnd = range.location + range.length - 1
+            let realLength = realEnd - realStart + 1
+            mutableString.setAttributes(attributes, range: NSMakeRange(realStart, realLength))
+        }
+            
+        startingIndex = effectiveRange.location + effectiveRange.length
+            
+        }
+        self.attributedText = mutableString
+    }
+    
     func testGetAttributedText()->NSAttributedString
     {
         return self.attributedText
