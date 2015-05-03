@@ -54,9 +54,14 @@ class ViewController: UIViewController {
     
     @IBAction func testButtonClicked(button: UIButton)
     {
-        hTextView.testAlign()
+        //hTextView.testAlign()
         hTextView.highlightText(NSMakeRange(120, 1), color: UIColor.greenColor())
         //hTextView.highlightText(NSMakeRange(7, 100), color: UIColor.redColor())
+        
+        for i in 0 ..< 3
+        {
+            println(hTextView.getRectForLineAtIndex(i))
+        }
     }
 }
 

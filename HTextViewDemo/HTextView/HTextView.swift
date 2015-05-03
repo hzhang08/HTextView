@@ -2,7 +2,7 @@
 //  HTextView.swift
 //  HTextViewDemo
 //
-//  Created by Change to ur account when u use on 4/28/15.
+//  Created by Hong Zhang on 4/28/15.
 //  Copyright (c) 2015 hangoutstudio. All rights reserved.
 //
 
@@ -28,6 +28,45 @@ class HTextView : UITextView
         
         return Int(textRect.height/fontHeight) //it will be an integer
 
+    }
+    
+    func getRectForLineAtIndex(index: Int)->CGRect
+    {
+        
+        let lineCount = countLines()
+        if index >= lineCount
+        {
+            NSException(name: "Parameter Error", reason: "index out of bound", userInfo: nil).raise()
+        }
+        
+        let layoutManager = self.layoutManager
+        let textContainer = self.textContainer
+        let glyphCount = layoutManager.numberOfGlyphs
+        
+        var glyphIndex = 0
+        var lineIndex = -1
+        while( glyphIndex < glyphCount )
+        {
+            var glyphRange = NSMakeRange(0, 0)
+            
+            var lineRect = layoutManager.lineFragmentUsedRectForGlyphAtIndex(glyphIndex, effectiveRange: &glyphRange)
+            
+            lineRect.origin.x += textContainer.lineFragmentPadding
+            lineRect.size.width -= textContainer.lineFragmentPadding
+            
+            lineIndex++
+            
+            if index == lineIndex
+            {
+                return lineRect
+            }
+            
+            glyphIndex = glyphRange.location + glyphRange.length
+        }
+        
+        NSException(name: "HTextView Error", reason: "Please contact the author mahone08@gmail.com for this SDK bug -- error info: getRectForLineAtIndex not supposed to reach here", userInfo: nil).raise()
+
+        return CGRectMake(-1, -1, -1, -1)
     }
     
     func countParagraphs() -> Int
