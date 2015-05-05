@@ -5,3 +5,5 @@ HTextView is an implementation based on iOS UITextView. It provides some methods
 2. count paragraphs in a UITextView
 
 3. highlight text in a UITextView
+
+4. center a paragraph
