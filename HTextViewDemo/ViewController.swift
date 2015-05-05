@@ -17,7 +17,6 @@ class ViewController: UIViewController {
         
         let filePath = NSBundle.mainBundle().pathForResource("text", ofType: "")!
         hTextView.text = String(contentsOfFile: filePath, encoding: NSUTF8StringEncoding, error: nil)
-        //hTextView.testAlign()
         //println("this text view has \(hTextView.countLines()) lines")
         
         println("this text view has \(hTextView.countParagraphs()) paragraphs")
@@ -54,7 +53,6 @@ class ViewController: UIViewController {
     
     @IBAction func testButtonClicked(button: UIButton)
     {
-        //hTextView.testAlign()
         hTextView.highlightText(NSMakeRange(120, 1), color: UIColor.greenColor())
         //hTextView.highlightText(NSMakeRange(7, 100), color: UIColor.redColor())
         

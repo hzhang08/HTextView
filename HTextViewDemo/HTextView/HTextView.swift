@@ -229,28 +229,5 @@ class HTextView : UITextView
         }
         self.attributedText = mutableString
     }
-    
-    func testGetAttributedText()->NSAttributedString
-    {
-        return self.attributedText
-        //self.textContainer.
-    }
-    
-    func testAlign()
-    {
-        let textStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
-        textStyle.alignment = NSTextAlignment.Center
-        let textStyle1 = textStyle.mutableCopy() as! NSMutableParagraphStyle
-        
-        
-        let mutableText = self.attributedText.mutableCopy() as! NSMutableAttributedString
-        
-        mutableText.setAttributes([NSParagraphStyleAttributeName : textStyle, NSFontAttributeName : self.font], range: NSMakeRange(0, 1))
-        mutableText.setAttributes([NSFontAttributeName : self.font], range: NSMakeRange(1, 4))
-        mutableText.setAttributes([NSParagraphStyleAttributeName : textStyle1, NSFontAttributeName : self.font], range: NSMakeRange(6, 1))
-        mutableText.setAttributes([NSFontAttributeName : self.font], range: NSMakeRange(7, mutableText.length - 7))
-        
-        self.attributedText = mutableText
-    }
 
 }
