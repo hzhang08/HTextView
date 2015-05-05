@@ -62,6 +62,8 @@ class ViewController: UIViewController {
         {
             println(hTextView.getRectForLineAtIndex(i))
         }
+        
+        hTextView.centerParagraphAtIndex(0)
     }
 }
 

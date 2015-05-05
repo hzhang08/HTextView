@@ -92,6 +92,93 @@ class HTextView : UITextView
         
     }
     
+    func centerParagraphAtIndex(index: Int)
+    {
+        changeAlignmentForParagraphAtIndex(index, alignment: NSTextAlignment.Center)
+    }
+    
+    func leftAlignParagraphAtIndex(index: Int)
+    {
+        changeAlignmentForParagraphAtIndex(index, alignment: NSTextAlignment.Left)
+    }
+    
+    func rightAlignParagraphAtIndex(index: Int)
+    {
+        changeAlignmentForParagraphAtIndex(index, alignment: NSTextAlignment.Right)
+    }
+    
+    private func changeAlignmentForParagraphAtIndex(index: Int, alignment: NSTextAlignment)
+    {
+        let paragraphCount = countParagraphs()
+        if(index >= paragraphCount)
+        {
+            NSException(name: "HTextView Error", reason: "Paragraph index is out of bound", userInfo: nil).raise()
+        }
+        
+        let stringComponents = self.text.componentsSeparatedByString("\n")
+
+        var paragraphIndex = -1
+        var textLength = 0
+        let mutableString = self.attributedText.mutableCopy() as! NSMutableAttributedString
+        
+        
+        for oneString in stringComponents
+        {
+            let oneStringLength = count(oneString)
+            if oneStringLength > 0
+            {
+                paragraphIndex++
+            }
+            
+            
+            var startingIndex = textLength
+            
+            
+            let previousTextLength = textLength
+            textLength += oneStringLength
+            textLength += 1 // \n after all the paragraphs
+            
+            if paragraphIndex == index
+            {
+                
+                
+                while(startingIndex < textLength)
+                {
+                    var effectiveRange = NSMakeRange(0,0)
+                    var attributes = mutableString.attributesAtIndex(startingIndex, effectiveRange: &effectiveRange)
+                    let textStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
+                    textStyle.alignment = alignment //NSParagraphStyleAttributeName
+                    attributes.updateValue( textStyle, forKey: NSParagraphStyleAttributeName )
+                    
+                    if textLength > effectiveRange.location + effectiveRange.length
+                    {
+                        let realStart = max(effectiveRange.location, previousTextLength)
+                        let realEnd = effectiveRange.location + effectiveRange.length //fake actually 1 greater
+                        let realLength = realEnd - realStart
+                        mutableString.setAttributes(attributes, range: NSMakeRange(realStart, realLength))
+                    }
+                    else
+                    {
+                        
+                        println(effectiveRange)
+                        //actually should not reach here
+                        let realStart = max(effectiveRange.location, previousTextLength) //please see the highlightText method
+                        let realEnd = textLength - 1 //textLength at this place will be at least 1
+                        let realLength = realEnd - realStart
+                        mutableString.setAttributes(attributes, range: NSMakeRange(realStart, realLength))
+                    }
+                    
+                    startingIndex = effectiveRange.location + effectiveRange.length
+                }//while
+                
+                self.attributedText = mutableString
+                
+                return
+            }// if paragraphIndex == index
+        }// for oneString in stringComponents
+
+    }
+    
     func getLineHeight() -> CGFloat
     {
         return self.font.lineHeight
