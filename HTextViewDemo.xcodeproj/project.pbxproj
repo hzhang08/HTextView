@@ -38,7 +38,7 @@
 		9535CCE91AF062B7003F4F8C /* HTextViewDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HTextViewDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9535CCEE1AF062B7003F4F8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9535CCEF1AF062B7003F4F8C /* HTextViewDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTextViewDemoTests.swift; sourceTree = "<group>"; };
-		9535CCF91AF0632F003F4F8C /* HTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTextView.swift; path = HTextView/HTextView.swift; sourceTree = "<group>"; };
+		9535CCF91AF0632F003F4F8C /* HTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTextView.swift; path = ../HTextView.swift; sourceTree = "<group>"; };
 		9535CCFB1AF1F16A003F4F8C /* text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = text; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
