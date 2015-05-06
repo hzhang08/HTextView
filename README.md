@@ -7,3 +7,5 @@ HTextView is an implementation based on iOS UITextView. It provides some methods
 3. highlight text in a UITextView
 
 4. center a paragraph
+
+5. more functionalities...
