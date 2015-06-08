@@ -226,7 +226,7 @@ class HTextView : UITextView
         var attributes = mutableString.attributesAtIndex(range.location, effectiveRange: &effectiveRange)
         attributes.updateValue(color, forKey: NSBackgroundColorAttributeName)
         
-        if range.location + range.location > effectiveRange.location + effectiveRange.length
+        if range.location + range.length > effectiveRange.location + effectiveRange.length
         {
             mutableString.setAttributes(attributes, range: effectiveRange)
         }
