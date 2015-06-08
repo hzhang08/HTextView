@@ -28,13 +28,13 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iY9-s3-s0t">
-                                <rect key="frame" x="277" y="445" width="93" height="30"/>
+                                <rect key="frame" x="252" y="445" width="93" height="30"/>
                                 <state key="normal" title="Remove View">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcP-pp-T5i">
-                                <rect key="frame" x="284" y="495" width="79" height="30"/>
+                                <rect key="frame" x="261" y="495" width="79" height="30"/>
                                 <state key="normal" title="Test Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -43,11 +43,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="eh7-Nc-C69" secondAttribute="centerX" constant="-0.5" id="7b3-6h-wL7"/>
-                            <constraint firstItem="iY9-s3-s0t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="277" id="FAP-1u-lop"/>
                             <constraint firstItem="zcP-pp-T5i" firstAttribute="top" secondItem="iY9-s3-s0t" secondAttribute="bottom" constant="20" id="Jlm-ER-fyX"/>
-                            <constraint firstItem="iY9-s3-s0t" firstAttribute="centerX" secondItem="zcP-pp-T5i" secondAttribute="centerX" id="Rem-mG-1D5"/>
+                            <constraint firstItem="iY9-s3-s0t" firstAttribute="centerX" secondItem="zcP-pp-T5i" secondAttribute="centerX" constant="-2" id="Rem-mG-1D5"/>
                             <constraint firstItem="eh7-Nc-C69" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="cQO-et-2kO"/>
                             <constraint firstItem="iY9-s3-s0t" firstAttribute="top" secondItem="eh7-Nc-C69" secondAttribute="bottom" constant="24" id="gav-ER-hol"/>
+                            <constraint firstItem="iY9-s3-s0t" firstAttribute="centerX" secondItem="eh7-Nc-C69" secondAttribute="centerX" constant="-2" id="grU-yz-uqu"/>
                             <constraint firstItem="eh7-Nc-C69" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="61" id="tfV-w7-ADT"/>
                         </constraints>
                     </view>
